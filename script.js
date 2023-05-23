@@ -1,0 +1,111 @@
+const APIRandomMichis = 'https://api.thecatapi.com/v1/images/search?limit=8'
+const keyAPI = 'live_R2mXxGW5ZLkIxedUBJK3TIdVE9sWRW0zOO1IVzSCrUAw70KZttzPnuauIfR9sw5B'
+
+const sectionContainerMichis = document.querySelector('.container-michis');
+const sectionContainerFavMichis = document.querySelector('.container-Favmichis');
+const buttonMoreMichis = document.querySelector('#more-michis');
+const mensajitoEmpty = document.querySelector('.mensajito');
+buttonMoreMichis.addEventListener('click', fetchData)
+async function fetchData() {
+    const res = await fetch(APIRandomMichis, {
+        headers: {
+            method: "GET",
+            'x-api-key': keyAPI
+        }
+    })
+    if (res.status !== 200) {
+        console.log('error')
+    }
+    const data = await res.json()
+
+    randomMichis(data)
+}
+let michisFavoritos = JSON.parse(localStorage.getItem('michisFavoritos')) || [];
+
+async function randomMichis(data) {
+    sectionContainerMichis.innerHTML = "";
+    data.forEach(gatito => {
+        const articleGatito = document.createElement('article');
+        const imgGatito = document.createElement('img');
+        const btnAgregarMichi = document.createElement('button');
+
+        articleGatito.classList.add('michi-card');
+        imgGatito.src = gatito.url;
+        btnAgregarMichi.classList.add('like-michi');
+        btnAgregarMichi.innerText = '❤️'
+        btnAgregarMichi.addEventListener('click', () => {
+            michisFavoritos.push(gatito);
+            localStorage.setItem('michisFavoritos', JSON.stringify(michisFavoritos));
+        })
+
+        articleGatito.appendChild(imgGatito);
+        articleGatito.appendChild(btnAgregarMichi);
+
+        sectionContainerMichis.appendChild(articleGatito);
+
+        sectionContainerMichis.classList.add('grid')
+    });
+}
+
+function favMichis() {
+    sectionContainerFavMichis.innerHTML = "";
+    michisFavoritos.forEach(gatito => {
+        const articleGatito = document.createElement('article');
+        const imgGatito = document.createElement('img');
+        const btnSacarMichiDeFavoritos = document.createElement('button');
+
+        articleGatito.classList.add('michi-card');
+        imgGatito.src = gatito.url;
+        btnSacarMichiDeFavoritos.classList.add('like-michi');
+        btnSacarMichiDeFavoritos.innerText = '💔'
+        btnSacarMichiDeFavoritos.id = `${gatito.id}`
+        btnSacarMichiDeFavoritos.addEventListener('click', (e) => {
+            const buttonMichisFav = e.target;
+            const padreCard = buttonMichisFav.parentElement;
+
+            padreCard.remove();
+
+            const id = buttonMichisFav.id;
+            localStorage.removeItem(id);
+
+            const michisFavoritos = JSON.parse(localStorage.getItem('michisFavoritos'));
+            const michisFavoritosActualizados = michisFavoritos.filter((gatito) => gatito.id !== id);
+            localStorage.setItem('michisFavoritos', JSON.stringify(michisFavoritosActualizados));
+
+
+            if(michisFavoritosActualizados == 0 || michisFavoritos == 0){
+                mensajitoEmpty.classList.remove('hidden')
+            } else {
+                mensajitoEmpty.classList.add('hidden')
+            }
+
+        })
+
+        articleGatito.appendChild(imgGatito);
+        articleGatito.appendChild(btnSacarMichiDeFavoritos);
+
+        sectionContainerFavMichis.appendChild(articleGatito);
+    });
+}
+
+function loadAllPages() {
+    if (sectionContainerMichis) {
+        window.addEventListener('DOMContentLoaded', fetchData)
+    } 
+    else if (sectionContainerFavMichis) {
+        window.addEventListener('DOMContentLoaded', () => {
+            if (michisFavoritos.length == 0) {
+                mensajitoEmpty.classList.remove('hidden')
+                console.log('no hay michis aún.')
+            } else {
+                mensajitoEmpty.classList.add('hidden')
+                sectionContainerFavMichis.classList.add('grid')
+                favMichis()
+                
+            }
+        })
+                
+    }
+}
+
+loadAllPages();
