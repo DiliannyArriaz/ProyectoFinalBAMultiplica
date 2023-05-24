@@ -87,7 +87,6 @@ nav ul a:hover {
 
 nav ul li {
     display: flex;
-    font-weight: bold;
     width: 25%;
     height: 100%;
     text-align: center;

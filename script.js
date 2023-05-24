@@ -120,7 +120,7 @@ function mostrarMensajeGuardado(mensaje) {
     mensajeGuardado.classList.add('mostrar');
     setTimeout(() => {
         mensajeGuardado.classList.remove('mostrar');
-    }, 2300);
+    }, 3000);
 }
 
 function loadAllPages() {
