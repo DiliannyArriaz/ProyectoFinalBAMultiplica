@@ -2,10 +2,9 @@
     --fondo-logo: #EBAD6E;
     --naranja-bordes: #f3b054;
 }
-
-/* * {
-    outline: 1px dashed red;
-} */
+h4 {
+    font-size: 14px !important;
+}
 
 body {
     margin: 0;
@@ -238,7 +237,6 @@ footer .bye-message p {
     text-align: justify;
     color: rgb(253, 252, 252);
 }
-
 .more-michis-button button {
     position: relative;
     display: inline-block;

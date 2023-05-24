@@ -5,6 +5,9 @@
     --naranja-bordes: #f3b054;
 }
 
+h4 {
+    font-size: 14px !important;
+}
 
 body {
     margin: 0;
@@ -130,6 +133,7 @@ footer {
     height: 240px;
     background-color: var(--fondo-logo);
     padding: 30px;
+    height: 210px;
 }
 
 footer .social-networks {
