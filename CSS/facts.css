@@ -1,14 +1,9 @@
 :root {
     --fondo-logo: #EBAD6E;
-    /* Colores del boton */
     --marron-oscuro: #4a3322;
     --blanco-rosita: #fff0f0;
     --naranja-bordes: #f3b054;
 }
-
-/* * {
-    outline: 1px dashed red;
-} */
 
 
 body {
@@ -62,6 +57,7 @@ nav ul {
     text-align: center;
     align-items: center;
 }
+
 nav ul a {
     text-decoration: none;
     color: rgb(253, 252, 252);
@@ -85,7 +81,8 @@ nav ul li:hover {
     background-color: #fec576;
     border-bottom: 1px #f6b458;
 }
-nav ul li:nth-child(4){
+
+nav ul li:nth-child(4) {
     background-color: #f5bd70;
     height: 100%;
     display: flex;
@@ -111,6 +108,9 @@ nav ul li:nth-child(4){
     align-items: center;
     flex-direction: column;
     justify-content: center;
+    background-color: #dbdbdb5e;
+    border-radius: 24px;
+    margin-bottom: 20px;
 }
 
 .random-facts p {
@@ -200,6 +200,7 @@ footer .credits ul li a {
 footer .credits ul li a:hover {
     color: rgb(251, 233, 195);
 }
+
 footer .bye-message {
     width: 33.33%;
     height: 100%;

@@ -6,15 +6,18 @@
     --naranja-bordes: #f3b054;
 }
 
-/* * {
-    outline: 1px dashed red;
-} */
-
 h4 {
     font-size: 12px !important;
 }
+
 body {
     margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.hidden {
+    display: none !important;
 }
 
 .grid {
@@ -72,6 +75,7 @@ nav ul {
     text-align: center;
     align-items: center;
 }
+
 nav ul a {
     text-decoration: none;
     color: rgb(253, 252, 252);
@@ -95,7 +99,8 @@ nav ul li:hover {
     background-color: #fec576;
     border-bottom: 1px #f6b458;
 }
-nav ul li:nth-child(1){
+
+nav ul li:nth-child(1) {
     background-color: #f5bd70;
     height: 100%;
     display: flex;
@@ -104,6 +109,7 @@ nav ul li:nth-child(1){
 }
 
 .container {
+    height: 600px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -126,9 +132,10 @@ nav ul li:nth-child(1){
     gap: 10px;
     justify-items: center;
 }
+
 .container-michis .michi-card {
-    width: 200px;
-    height: 200px;
+    width: 250px;
+    height: 250px;
     margin: 10px;
     overflow: hidden;
     border-radius: 8px;
@@ -137,8 +144,8 @@ nav ul li:nth-child(1){
 }
 
 .michi-card img {
-    width: 200px;
-    height: 200px;
+    width: 250px;
+    height: 250px;
     object-fit: cover;
     z-index: 2;
 }
@@ -158,6 +165,55 @@ nav ul li:nth-child(1){
     border: 0;
 }
 
+.like-michi {
+    font-size: 20px;
+    transition: transform 0.3s;
+}
+
+.like-michi:hover {
+    transform: scale(1.2);
+}
+
+.like-michi:active {
+    animation: change-text 0.5s forwards;
+}
+
+@keyframes change-text {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.5);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+.mensaje-guardado {
+    width: 350px;
+    text-align: center;
+    position: fixed;
+    bottom: 10%;
+    right: 10px;
+    transform: translateX(-50%);
+    background-color: #d38740;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: 10;
+}
+
+.mensaje-guardado.mostrar {
+    opacity: 1;
+}
+
+
+
 footer {
     margin-top: 60px;
     display: flex;
@@ -166,6 +222,7 @@ footer {
     height: 240px;
     background-color: var(--fondo-logo);
     padding: 30px;
+    height: 210px;
 }
 
 footer .social-networks {
@@ -235,6 +292,7 @@ footer .credits ul li a {
 footer .credits ul li a:hover {
     color: rgb(251, 233, 195);
 }
+
 footer .bye-message {
     width: 33.33%;
     height: 100%;
@@ -250,6 +308,7 @@ footer .bye-message p {
     text-align: justify;
     color: rgb(253, 252, 252);
 }
+
 .more-michis-button {
     width: 100%;
     display: flex;
