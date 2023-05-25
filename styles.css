@@ -522,7 +522,7 @@ footer .bye-message p {
     .menu-desktop {
         display: none;
     }
-    
+
     .grid {
         display: grid;
         grid-template-columns: 1fr;
@@ -536,12 +536,17 @@ footer .bye-message p {
         height: auto;
     }
     
+
     .container-michis .michi-card {
         width: 180px;
         height: 180px;
     }
 
     .menu-mobile {
+        display: none;
+    }
+
+    .aside-menu-mobile {
         display: none;
     }
 
@@ -559,10 +564,14 @@ footer .bye-message p {
     }
     
     .container-michis .michi-card {
-        width: 250px;
-        height: 250px;
+        width: 220px;
+        height: 220px;
     }
     .menu-mobile {
+        display: none;
+    }
+
+    .aside-menu-mobile {
         display: none;
     }
 
@@ -584,6 +593,34 @@ footer .bye-message p {
         height: 300px;
     }
     .menu-mobile {
+        display: none;
+    }
+    .aside-menu-mobile {
+        display: none;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 10px;
+        justify-items: center;
+    }
+}
+
+
+@media (min-width: 1500px){
+    .container {
+        height: auto;
+    }
+    
+    .container-michis .michi-card {
+        width: 300px;
+        height: 300px;
+    }
+    .menu-mobile {
+        display: none;
+    }
+    .aside-menu-mobile {
         display: none;
     }
 

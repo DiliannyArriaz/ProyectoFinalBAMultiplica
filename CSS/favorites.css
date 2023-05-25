@@ -328,6 +328,7 @@ footer {
     position: relative;
     bottom: 0px;
     z-index: 1;
+    box-sizing: border-box;
 }
 
 footer .social-networks {
@@ -521,7 +522,7 @@ footer .bye-message p {
 
 @media (min-width: 561px) and (max-width: 760px){
     .container {
-        height: auto;
+        height: 670px;
     }
     
     .container-Favmichis .michi-card {
@@ -543,7 +544,7 @@ footer .bye-message p {
 
 @media (min-width: 760px) and (max-width: 1080px){
     .container {
-        height: auto;
+        height: 670px;
     }
     
     .container-michis .michi-card {
@@ -564,7 +565,7 @@ footer .bye-message p {
 
 @media (min-width: 1081px){
     .container {
-        height: auto;
+        height: 670px;
     }
     
     .container-Favmichis .michi-card {

@@ -2,6 +2,7 @@ const container = document.querySelector('.container')
 const iconMenuMobile = document.querySelector('.left');
 const asideMenuMobile = document.querySelector('.aside-menu-mobile')
 
+
 iconMenuMobile.addEventListener('click', ()=> {
     asideMenuMobile.classList.toggle('hidden');
 })

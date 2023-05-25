@@ -9,11 +9,7 @@ const deleteallmichis = document.querySelector('#deleteallMichis')
 const btnAnterior = document.querySelector('#anterior-btn');
 const btnSiguiente = document.querySelector('#siguiente-btn');
 const iconMenuMobile = document.querySelector('.left');
-const asideMenuMobile = document.querySelector('.aside-menu-mobile')
 
-iconMenuMobile.addEventListener('click', ()=> {
-    asideMenuMobile.classList.toggle('hidden');
-})
 
 async function fetchData() {
     const res = await fetch(APIRandomMichis, {
@@ -47,7 +43,7 @@ async function randomMichis(data) {
             if (michisFavoritos.some(michi => michi.id === gatito.id)) {
                 mostrarMensajeGuardado('This michi is already saved on your list')
             } else {
-                if(michisFavoritos.length >= 12){
+                if (michisFavoritos.length >= 12) {
                     mostrarMensajeGuardado('You have so many michis!');
                 } else {
                     michisFavoritos.push(gatito);
@@ -55,7 +51,7 @@ async function randomMichis(data) {
                     btnAgregarMichi.innerText = '💔'
                     mostrarMensajeGuardado('Michi Saved');
                 }
-                }
+            }
 
 
         })
@@ -96,7 +92,7 @@ function favMichis() {
             const michisFavoritos = JSON.parse(localStorage.getItem('michisFavoritos'));
             const michisFavoritosActualizados = michisFavoritos.filter((gatito) => gatito.id !== id);
             localStorage.setItem('michisFavoritos', JSON.stringify(michisFavoritosActualizados));
-            
+
 
             if (michisFavoritosActualizados == 0 || michisFavoritos == 0) {
                 mensajitoEmpty.classList.remove('hidden')
@@ -133,6 +129,12 @@ function loadAllPages() {
     if (sectionContainerMichis) {
         window.addEventListener('DOMContentLoaded', fetchData)
         buttonMoreMichis.addEventListener('click', fetchData)
+
+        const asideMenuMobile = document.querySelector('.aside-menu-mobile')
+
+        iconMenuMobile.addEventListener('click', () => {
+            asideMenuMobile.classList.toggle('hidden');
+        })
     }
     else if (sectionContainerFavMichis) {
         window.addEventListener('DOMContentLoaded', () => {
@@ -145,6 +147,13 @@ function loadAllPages() {
                 sectionContainerFavMichis.classList.add('grid')
                 favMichis()
             }
+
+            const asideMenuMobile = document.querySelector('.aside-menu-mobile')
+
+            iconMenuMobile.addEventListener('click', ()=> {
+                asideMenuMobile.classList.toggle('hidden');
+                console.log('click')
+})
         })
         deleteallmichis.addEventListener('click', deleteAllMichis)
     }
