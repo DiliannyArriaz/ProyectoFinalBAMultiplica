@@ -204,7 +204,7 @@ header img {
     align-items: center;
     margin-top: 30px;
     margin-bottom: 30px;
-    height: auto;
+    height: auto !important;
 }
 
 .container-Favmichis {
@@ -495,7 +495,7 @@ footer .bye-message p {
 
 @media (max-width: 560px) {
     .container {
-        height: auto;
+        height: auto !important;
     }
 
     .mensajito p {
@@ -524,7 +524,7 @@ footer .bye-message p {
 
 @media (min-width: 561px) and (max-width: 760px){
     .container {
-        height: auto;
+        height: auto !important;
     }
     
     .container-Favmichis .michi-card {
@@ -546,7 +546,7 @@ footer .bye-message p {
 
 @media (min-width: 760px) and (max-width: 1080px){
     .container {
-        height: auto;
+        height: auto !important;
     }
     
     .container-michis .michi-card {
@@ -567,7 +567,7 @@ footer .bye-message p {
 
 @media (min-width: 1081px){
     .container {
-        height: auto;
+        height: auto !important;
     }
     
     .container-Favmichis .michi-card {
