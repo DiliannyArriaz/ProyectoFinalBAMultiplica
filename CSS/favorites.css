@@ -5,8 +5,6 @@
     --naranja-bordes: #f3b054;
 }
 
-
-
 h4 {
     font-size: 14px !important;
     width: 30%;
@@ -300,11 +298,11 @@ header img {
 
 
 .mensaje-guardado {
-    width: 350px;
+    width: auto;
     text-align: center;
     position: fixed;
     bottom: 10%;
-    right: 10px;
+    right: -2px;
     transform: translateX(-50%);
     background-color: #d38740;
     color: #ffffff;
@@ -502,7 +500,9 @@ footer .bye-message p {
         width: 50px;
         height: 50px;
     }
-
+    .like-michi {
+        font-size: 28px;
+    }
     h4 {
         font-size: 10px !important;
     }
@@ -521,7 +521,9 @@ footer .bye-message p {
     .menu-desktop {
         display: none;
     }
-    
+    footer .social-networks ul,  footer .credits ul, footer .bye-message p{
+        font-size: 10px;
+    }
     .grid {
         display: grid;
         grid-template-columns: 1fr;

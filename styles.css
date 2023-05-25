@@ -281,11 +281,11 @@ header img {
 }
 
 .mensaje-guardado {
-    width: 350px;
+    width: auto;
     text-align: center;
     position: fixed;
     bottom: 10%;
-    right: 10px;
+    right: -2px;
     transform: translateX(-50%);
     background-color: #d38740;
     color: #ffffff;
@@ -514,11 +514,16 @@ footer .bye-message p {
     }
 }
 
-
-
 @media (max-width: 560px) {
     .container {
         height: auto;
+    }
+    .michi-card .like-michi {
+        width: 50px;
+        height: 50px;
+    }
+    .like-michi {
+        font-size: 28px;
     }
     h4 {
         font-size: 10px !important;
@@ -549,6 +554,9 @@ footer .bye-message p {
     .container-michis .michi-card {
         width: 180px;
         height: 180px;
+    }
+    footer .social-networks ul,  footer .credits ul, footer .bye-message p{
+        font-size: 10px;
     }
 
     .menu-mobile {
@@ -615,7 +623,6 @@ footer .bye-message p {
         justify-items: center;
     }
 }
-
 
 @media (min-width: 1500px){
     .container {
