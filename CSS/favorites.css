@@ -498,6 +498,11 @@ footer .bye-message p {
         height: auto !important;
     }
 
+    .michi-card .like-michi {
+        width: 50px;
+        height: 50px;
+    }
+
     h4 {
         font-size: 10px !important;
     }
@@ -528,6 +533,10 @@ footer .bye-message p {
 @media (min-width: 561px) and (max-width: 760px){
     .container {
         height: auto !important;
+    }
+    .michi-card .like-michi {
+        width: 50px;
+        height: 50px;
     }
     h4 {
         font-size: 10px !important;
