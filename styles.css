@@ -1,6 +1,5 @@
 :root {
     --fondo-logo: #EBAD6E;
-    /* Colores del boton */
     --marron-oscuro: #4a3322;
     --blanco-rosita: #fff0f0;
     --naranja-bordes: #f3b054;
@@ -11,7 +10,8 @@ h4 {
 }
 
 body {
-    margin: 0;
+    width: 100%;
+    height: 100dvh;
     display: flex;
     flex-direction: column;
 }
@@ -39,7 +39,7 @@ header img {
     width: 100%;
 }
 
-nav {
+.menu-desktop  {
     position: relative;
     background-color: var(--fondo-logo);
     display: flex;
@@ -49,7 +49,7 @@ nav {
     box-shadow: 0 0 8px 0 #373737;
 }
 
-nav figure {
+.menu-desktop figure {
     display: flex;
     width: 20%;
     height: 100%;
@@ -58,13 +58,13 @@ nav figure {
     align-items: center;
 }
 
-nav figure img {
+.menu-desktop figure img {
     width: 150px;
     height: 70px;
     object-fit: cover;
 }
 
-nav ul {
+.menu-desktop  ul {
     width: 80%;
     height: 100%;
     display: flex;
@@ -76,16 +76,16 @@ nav ul {
     align-items: center;
 }
 
-nav ul a {
+.menu-desktop  ul a {
     text-decoration: none;
     color: rgb(253, 252, 252);
 }
 
-nav ul a:hover {
+.menu-desktop  ul a:hover {
     cursor: pointer;
 }
 
-nav ul li {
+.menu-desktop  ul li {
     display: flex;
     width: 25%;
     height: 100%;
@@ -94,18 +94,65 @@ nav ul li {
     justify-content: center;
 }
 
-nav ul li:hover {
+.menu-desktop  ul li:hover {
     background-color: #fec576;
     border-bottom: 1px #f6b458;
 }
 
-nav ul li:nth-child(1) {
+.menu-desktop  ul li:nth-child(1) {
     background-color: #f5bd70;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
+.menu-mobile  {
+    position: relative;
+    background-color: var(--fondo-logo);
+    display: flex;
+    height: 50px;
+    align-items: center;
+    overflow: hidden;
+    box-shadow: 0 0 8px 0 #373737;
+}
+
+.menu-mobile .left-menu {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.menu-mobile .left-menu img{
+    margin-left: 10px;
+    width: 40px;
+    height: 50px;
+}
+
+.menu-mobile .right-menu {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+.menu-mobile .right-menu img {
+    width: 150px;
+    height: 70px;
+}
+
+.menu-mobile  ul {
+    width: 80%;
+    height: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+    align-items: center;
+}
+
 
 .container {
     height: 600px;
@@ -133,8 +180,8 @@ nav ul li:nth-child(1) {
 }
 
 .container-michis .michi-card {
-    width: 250px;
-    height: 250px;
+    width: 300px;
+    height: 300px;
     margin: 10px;
     overflow: hidden;
     border-radius: 8px;
@@ -143,8 +190,8 @@ nav ul li:nth-child(1) {
 }
 
 .michi-card img {
-    width: 250px;
-    height: 250px;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     z-index: 2;
 }
@@ -222,6 +269,8 @@ footer {
     background-color: var(--fondo-logo);
     padding: 30px;
     height: 210px;
+    position: relative;
+    bottom: 0;
 }
 
 footer .social-networks {
@@ -420,5 +469,88 @@ footer .bye-message p {
 
     100% {
         transform: rotate(360deg);
+    }
+}
+
+
+
+@media (max-width: 560px) {
+    .container {
+        height: auto;
+    }
+
+    .menu-desktop {
+        display: none;
+    }
+    
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+        justify-items: center;
+    }
+}
+
+@media (min-width: 561px) and (max-width: 760px){
+    .container {
+        height: auto;
+    }
+    
+    .container-michis .michi-card {
+        width: 180px;
+        height: 180px;
+    }
+
+    .menu-mobile {
+        display: none;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+        justify-items: center;
+    }
+}
+
+@media (min-width: 760px) and (max-width: 1080px){
+    .container {
+        height: auto;
+    }
+    
+    .container-michis .michi-card {
+        width: 250px;
+        height: 250px;
+    }
+    .menu-mobile {
+        display: none;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 10px;
+        justify-items: center;
+    }
+}
+
+@media (min-width: 1081px){
+    .container {
+        height: auto;
+    }
+    
+    .container-michis .michi-card {
+        width: 300px;
+        height: 300px;
+    }
+    .menu-mobile {
+        display: none;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 10px;
+        justify-items: center;
     }
 }
