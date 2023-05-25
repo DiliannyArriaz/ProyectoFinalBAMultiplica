@@ -7,6 +7,8 @@
 
 h4 {
     font-size: 14px !important;
+    width: 30%;
+    text-align: start;
 }
 
 body {
@@ -518,7 +520,12 @@ footer .bye-message p {
     .container {
         height: auto;
     }
-
+    h4 {
+        font-size: 10px !important;
+    }
+    footer .social-networks ul,  footer .credits ul, footer .bye-message p{
+        font-size: 10px;
+    }
     .menu-desktop {
         display: none;
     }

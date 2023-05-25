@@ -7,6 +7,8 @@
 
 h4 {
     font-size: 14px !important;
+    width: 30%;
+    text-align: start;
 }
 
 body {
