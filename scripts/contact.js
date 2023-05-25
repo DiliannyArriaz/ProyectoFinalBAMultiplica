@@ -6,9 +6,7 @@ document.getElementById('contact-form').addEventListener('submit', function(even
     event.preventDefault()
     const inputUserName = document.getElementById('name').value;
     const inputUserEmail = document.getElementById('email').value;
-    // const inputUserMessage = document.getElementById('message').value;
     
-
     let userName = inputUserName;
     let userEmail = inputUserEmail;
     buttonEnviar.addEventListener('click', ()=> saludar(userName, userEmail)
