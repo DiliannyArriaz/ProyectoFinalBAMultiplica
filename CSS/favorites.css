@@ -195,14 +195,15 @@ header img {
 }
 
 
-.container {
+main .container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin-top: 30px;
     margin-bottom: 30px;
-    height: auto !important;
+    height: 670px;
+    position: relative;
 }
 
 .container-Favmichis {
@@ -496,7 +497,7 @@ footer .bye-message p {
 
 @media (max-width: 560px) {
     .container {
-        height: auto !important;
+        height: auto ;
     }
 
     .michi-card .like-michi {
@@ -518,7 +519,9 @@ footer .bye-message p {
     }
     .mensajito p a {
         margin: 0;
-
+    }
+    .mensaje-guardado {
+        right: -117px;
     }
 
     .menu-desktop {
@@ -537,7 +540,7 @@ footer .bye-message p {
 
 @media (min-width: 561px) and (max-width: 760px){
     .container {
-        height: auto !important;
+        height: auto;
     }
     .michi-card .like-michi {
         width: 50px;
@@ -569,7 +572,7 @@ footer .bye-message p {
 
 @media (min-width: 760px) and (max-width: 1080px){
     .container {
-        height: auto !important;
+        height: auto;
     }
     
     .container-michis .michi-card {
@@ -590,7 +593,7 @@ footer .bye-message p {
 
 @media (min-width: 1081px){
     .container {
-        height: auto !important;
+        height: auto;
     }
     
     .container-Favmichis .michi-card {

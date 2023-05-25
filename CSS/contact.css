@@ -303,7 +303,7 @@ textarea {
     text-align: center;
     position: fixed;
     bottom: 26%;
-    right: -60px;
+    right: 10px;
     transform: translateX(-50%);
     background-color: #d38740;
     color: #ffffff;
@@ -422,6 +422,12 @@ footer .bye-message p {
 
     h4 {
         font-size: 10px !important;
+    }
+
+    .mensaje-guardado {
+        right: -30px;
+        height: 142px;
+        width: 240px;
     }
 
     .menu-desktop {

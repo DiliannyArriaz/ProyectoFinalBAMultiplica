@@ -11,7 +11,6 @@ document.getElementById('contact-form').addEventListener('submit', function(even
     let userEmail = inputUserEmail;
     buttonEnviar.addEventListener('click', ()=> saludar(userName, userEmail)
     )
-
 })
 
 iconMenuMobile.addEventListener('click', ()=> {
@@ -28,7 +27,7 @@ function mostrarMensajeGuardado(mensaje) {
     mensajeGuardado.classList.add('mostrar');
     setTimeout(() => {
         mensajeGuardado.classList.remove('mostrar');
-    }, 3000);
+    }, 5000);
 }
 
 
