@@ -96,7 +96,7 @@ function favMichis() {
             const michisFavoritos = JSON.parse(localStorage.getItem('michisFavoritos'));
             const michisFavoritosActualizados = michisFavoritos.filter((gatito) => gatito.id !== id);
             localStorage.setItem('michisFavoritos', JSON.stringify(michisFavoritosActualizados));
-
+            
 
             if (michisFavoritosActualizados == 0 || michisFavoritos == 0) {
                 mensajitoEmpty.classList.remove('hidden')
@@ -149,6 +149,8 @@ function loadAllPages() {
         deleteallmichis.addEventListener('click', deleteAllMichis)
     }
 }
+
+
 
 loadAllPages();
 
