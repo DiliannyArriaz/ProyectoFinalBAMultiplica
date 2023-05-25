@@ -299,10 +299,11 @@ textarea {
 
 .mensaje-guardado {
     width: auto;
+    height: auto;
     text-align: center;
     position: fixed;
-    bottom: 10%;
-    right: -2px;
+    bottom: 26%;
+    right: -60px;
     transform: translateX(-50%);
     background-color: #d38740;
     color: #ffffff;
