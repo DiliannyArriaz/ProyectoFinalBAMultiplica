@@ -1,5 +1,10 @@
 const container = document.querySelector('.container')
+const iconMenuMobile = document.querySelector('.left');
+const asideMenuMobile = document.querySelector('.aside-menu-mobile')
 
+iconMenuMobile.addEventListener('click', ()=> {
+    asideMenuMobile.classList.toggle('hidden');
+})
 
 class Productos {
     constructor(price, name, productImage, category, totalPrice, directions, brand) {

@@ -153,15 +153,15 @@ header img {
     align-items: center;
 }
 
-
 .aside-menu-mobile {
     display: flex;
     align-items: center;
     background-color: var(--naranja-bordes);
-    
     width: 200px;
     height: 200px;
     position: absolute;
+    overflow: hidden;
+    border-bottom-right-radius: 8px;
     z-index: 11;
 }
 

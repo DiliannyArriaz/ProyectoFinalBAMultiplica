@@ -8,6 +8,12 @@ const mensajitoEmpty = document.querySelector('.mensajito');
 const deleteallmichis = document.querySelector('#deleteallMichis')
 const btnAnterior = document.querySelector('#anterior-btn');
 const btnSiguiente = document.querySelector('#siguiente-btn');
+const iconMenuMobile = document.querySelector('.left');
+const asideMenuMobile = document.querySelector('.aside-menu-mobile')
+
+iconMenuMobile.addEventListener('click', ()=> {
+    asideMenuMobile.classList.toggle('hidden');
+})
 
 async function fetchData() {
     const res = await fetch(APIRandomMichis, {
