@@ -241,6 +241,7 @@ header img {
 .michi-card .like-michi {
     width: 30px;
     height: 30px;
+    text-align: center;
     background-color: rgba(255, 255, 255, 0.479);
     display: flex;
     align-items: center;
