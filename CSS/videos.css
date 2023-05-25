@@ -444,6 +444,9 @@ footer .bye-message p {
     h4 {
         font-size: 10px !important;
     }
+    footer .social-networks ul,  footer .credits ul, footer .bye-message p{
+        font-size: 10px;
+    }
     .container-michis .michi-card {
         width: 250px;
         height: 250px;
