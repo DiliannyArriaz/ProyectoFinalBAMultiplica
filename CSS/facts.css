@@ -267,6 +267,11 @@ footer .social-networks ul li a {
 footer .social-networks ul li a:hover {
     color: rgb(251, 233, 195);
 }
+.social-networks .gmail {
+    width: 42px;
+    height: 42px;
+}
+
 
 footer .credits {
     width: 33.33%;
