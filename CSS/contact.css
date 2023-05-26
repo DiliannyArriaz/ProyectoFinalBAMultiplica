@@ -453,10 +453,12 @@ footer p {
     }
 
     .mensaje-guardado {
-        right: -50px;
-        height: 142px;
-        width: 240px;
+        bottom: 10%;
+        right: 50%;
+        transform: translate(50%, -50%);
+        height: auto;
     }
+
     footer .social-networks ul,  footer .credits ul, footer .bye-message p{
         font-size: 16px;
     }
@@ -482,10 +484,12 @@ footer p {
         height: 180px;
     }
     .mensaje-guardado {
-        right: -150px;
-        height: 142px;
-        width: 240px;
+        bottom: 10%;
+        right: 50%;
+        transform: translate(50%, -50%);
+        height: auto;
     }
+    
     footer .social-networks ul,  footer .credits ul, footer .bye-message p{
         font-size: 16px;
     }

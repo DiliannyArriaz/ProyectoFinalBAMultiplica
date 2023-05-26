@@ -561,9 +561,9 @@ footer p {
     }
 
     .mensaje-guardado {
-        right: -50px;
-        height: auto;
-        width: 150px;
+        bottom: 10%;
+        right: 50%;
+        transform: translate(50%, -50%)
     }
 
     footer .social-networks ul,  footer .credits ul, footer .bye-message p{
@@ -597,9 +597,10 @@ footer p {
         font-size: 16px;
     }
     .mensaje-guardado {
-        right: -30px;
-        height: auto;
-        width: auto;
+            right: 50%;
+            transform: translate(50%, -50%);
+            height: auto;
+            width: auto;
     }
     .menu-mobile {
         display: none;

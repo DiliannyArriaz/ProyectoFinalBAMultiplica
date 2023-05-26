@@ -424,9 +424,10 @@ footer p {
         font-size: 16px;
     }
     .mensaje-guardado {
-        right: -30px;
-        height: 142px;
-        width: 240px;
+        bottom: 10%;
+        right: 50%;
+        transform: translate(50%, -50%);
+        height: auto;
     }
     .menu-desktop {
         display: none;
@@ -443,9 +444,10 @@ footer p {
         display: none;
     }
     .mensaje-guardado {
-        right: -30px;
-        height: 142px;
-        width: 240px;
+        bottom: 10%;
+        right: 50%;
+        transform: translate(50%, -50%);
+        height: auto;
     }
     .aside-menu-mobile {
         display: none;

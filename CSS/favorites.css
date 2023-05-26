@@ -556,10 +556,10 @@ footer p {
         margin: 0;
     }
     .mensaje-guardado {
-        bottom: 26%;
-        right: -50px;
+        bottom: 10%;
+        right: 50%;
+        transform: translate(50%, -50%);
         height: auto;
-        width: 240px;
     }
 
     .menu-desktop {
@@ -595,9 +595,10 @@ footer p {
         height: 170px;
     }
     .mensaje-guardado {
-        right: -30px;
+        bottom: 10%;
+        right: 50%;
+        transform: translate(50%, -50%);
         height: auto;
-        width: auto;
     }
     .menu-mobile {
         display: none;
