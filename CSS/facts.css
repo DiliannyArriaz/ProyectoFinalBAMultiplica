@@ -180,6 +180,11 @@ header img {
 }
 
 .aside-menu-mobile ul li a {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    width: 100%;
+    height: 100%;
     text-decoration: none;
     color: #f6e7d6;
 }
