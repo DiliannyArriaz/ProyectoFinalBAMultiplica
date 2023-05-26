@@ -415,9 +415,6 @@ footer p {
     .container {
         height: auto;
     }
-    /* h4 {
-        font-size: 10px !important;
-    } */
     footer .social-networks ul,  footer .credits ul, footer .bye-message p{
         font-size: 16px;
     }

@@ -539,9 +539,7 @@ footer p {
     .like-michi {
         font-size: 28px;
     }
-    /* h4 {
-        font-size: 16px !important;
-    } */
+
     .mensajito p {
         padding: 10px;
         width: 350px;
@@ -563,9 +561,6 @@ footer p {
         display: none;
     }
 
-    /* footer {
-        height: 180px;
-    } */
     footer .social-networks ul,  footer .credits ul, footer .bye-message p{
         font-size: 16px;
     }
@@ -585,9 +580,6 @@ footer p {
         width: 50px;
         height: 50px;
     }
-    /* h4 {
-        font-size: 16px !important;
-    } */
 
     footer .social-networks ul,  footer .credits ul, footer .bye-message p{
         font-size: 16px;
