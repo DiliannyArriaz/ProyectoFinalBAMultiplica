@@ -3,9 +3,8 @@
     --naranja-bordes: #f3b054;
 }
 
-
 h4 {
-    font-size: 14px !important;
+    font-size: 16px !important;
     width: 100%;
     height: 20%;
     text-align: center;
@@ -331,6 +330,7 @@ footer {
     background-color: var(--fondo-logo);
     padding: 30px;
     box-sizing: border-box;
+    position: relative;
 }
 
 footer .social-networks {
@@ -343,7 +343,7 @@ footer .social-networks {
 }
 
 footer .social-networks ul {
-    height: 50%;
+    height: 80%;
     width: 100%;
     list-style: none;
     display: flex;
@@ -379,7 +379,7 @@ footer .credits {
 }
 
 footer .credits ul {
-    height: 100%;
+    height: 80%;
     width: 100%;
     list-style: none;
     display: flex;
@@ -416,7 +416,7 @@ footer .bye-message {
 footer .bye-message ul  {
     display: flex;
     flex-direction: column;
-    height: 100%;
+    height: 80%;
     width: 100%;
     list-style: none;
     align-items: center;
@@ -446,17 +446,19 @@ footer p {
     .container {
         height: auto;
     }
-
+/* 
     h4 {
-        font-size: 10px !important;
-    }
+        font-size: 16;
+    } */
 
     .mensaje-guardado {
         right: -50px;
         height: 142px;
         width: 240px;
     }
-
+    footer .social-networks ul,  footer .credits ul, footer .bye-message p{
+        font-size: 16px;
+    }
     .menu-desktop {
         display: none;
     }
@@ -483,6 +485,9 @@ footer p {
         height: 142px;
         width: 240px;
     }
+    footer .social-networks ul,  footer .credits ul, footer .bye-message p{
+        font-size: 16px;
+    }
     .menu-mobile {
         display: none;
     }
@@ -500,11 +505,11 @@ footer p {
         height: auto;
     }
 
-    h4 {
+    /* h4 {
         font-size: 10px !important;
-    }
+    } */
     footer .social-networks ul,  footer .credits ul, footer .bye-message p{
-        font-size: 10px;
+        font-size: 16px;
     }
     .container-michis .michi-card {
         width: 250px;
