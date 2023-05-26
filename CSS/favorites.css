@@ -8,8 +8,9 @@
 
 h4 {
     font-size: 14px !important;
-    width: 30%;
-    text-align: start;
+    width: 100%;
+    height: 20%;
+    text-align: center;
 }
 
 body {
@@ -349,14 +350,16 @@ footer .social-networks {
 }
 
 footer .social-networks ul {
-    height: 100%;
-    width: 30%;
+    height: 50%;
+    width: 100%;
     list-style: none;
     display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    flex-direction: row;
     padding: 0;
     font-size: 16px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 }
 
 footer .social-networks ul li {
@@ -384,17 +387,18 @@ footer .credits {
 
 footer .credits ul {
     height: 100%;
-    width: 30%;
+    width: 100%;
     list-style: none;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    justify-content: center;
     padding: 0;
     font-size: 16px;
 }
 
 footer .credits ul li {
     margin: 0;
+    height: 25%;
     text-align: center;
 }
 
@@ -416,13 +420,27 @@ footer .bye-message {
     justify-content: center;
 }
 
-footer .bye-message p {
+footer .bye-message ul  {
+    display: flex;
+    flex-direction: column;
     height: 100%;
     width: 100%;
-    text-align: justify;
+    list-style: none;
+    align-items: center;
+    padding: 0;
+}
+footer .bye-message ul li {
+    height: 25%;
+}
+
+footer .bye-message ul li a {
+    text-decoration: none;
     color: rgb(253, 252, 252);
 }
 
+footer .bye-message ul li a:hover {
+    color: rgb(251, 233, 195);
+}
 .more-michis-button {
     display: flex;
     justify-content: center;
