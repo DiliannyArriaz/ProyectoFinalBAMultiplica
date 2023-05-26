@@ -128,7 +128,10 @@ function mostrarMensajeGuardado(mensaje) {
 function loadAllPages() {
     if (sectionContainerMichis) {
         window.addEventListener('DOMContentLoaded', fetchData)
-        buttonMoreMichis.addEventListener('click', fetchData)
+        buttonMoreMichis.addEventListener('click', ()=> {
+            fetchData()
+            topFunction()
+        })
 
         const asideMenuMobile = document.querySelector('.aside-menu-mobile')
 
@@ -150,15 +153,19 @@ function loadAllPages() {
 
             const asideMenuMobile = document.querySelector('.aside-menu-mobile')
 
-            iconMenuMobile.addEventListener('click', ()=> {
+            iconMenuMobile.addEventListener('click', () => {
                 asideMenuMobile.classList.toggle('hidden');
                 console.log('click')
-})
-    })
+            })
+        })
         deleteallmichis.addEventListener('click', deleteAllMichis)
     }
 }
 
+function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+}
 
 
 loadAllPages();
