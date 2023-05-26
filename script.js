@@ -154,7 +154,7 @@ function loadAllPages() {
                 asideMenuMobile.classList.toggle('hidden');
                 console.log('click')
 })
-        })
+    })
         deleteallmichis.addEventListener('click', deleteAllMichis)
     }
 }

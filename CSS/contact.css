@@ -425,7 +425,7 @@ footer .bye-message p {
     }
 
     .mensaje-guardado {
-        right: -30px;
+        right: -50px;
         height: 142px;
         width: 240px;
     }
@@ -451,7 +451,11 @@ footer .bye-message p {
         width: 180px;
         height: 180px;
     }
-
+    .mensaje-guardado {
+        right: -150px;
+        height: 142px;
+        width: 240px;
+    }
     .menu-mobile {
         display: none;
     }
@@ -479,7 +483,11 @@ footer .bye-message p {
         width: 250px;
         height: 250px;
     }
-
+    .mensaje-guardado {
+        right: -30px;
+        height: 142px;
+        width: 240px;
+    }
     .menu-mobile {
         display: none;
     }

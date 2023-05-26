@@ -394,6 +394,11 @@ footer .bye-message p {
     footer .social-networks ul,  footer .credits ul, footer .bye-message p{
         font-size: 10px;
     }
+    .mensaje-guardado {
+        right: -30px;
+        height: 142px;
+        width: 240px;
+    }
     .menu-desktop {
         display: none;
     }
@@ -408,7 +413,11 @@ footer .bye-message p {
     .menu-mobile {
         display: none;
     }
-
+    .mensaje-guardado {
+        right: -30px;
+        height: 142px;
+        width: 240px;
+    }
     .aside-menu-mobile {
         display: none;
     }

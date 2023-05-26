@@ -41,7 +41,7 @@ header img {
     width: 100%;
 }
 
-.menu-desktop  {
+.menu-desktop {
     position: relative;
     background-color: var(--fondo-logo);
     display: flex;
@@ -66,7 +66,7 @@ header img {
     object-fit: cover;
 }
 
-.menu-desktop  ul {
+.menu-desktop ul {
     width: 80%;
     height: 100%;
     display: flex;
@@ -78,16 +78,16 @@ header img {
     align-items: center;
 }
 
-.menu-desktop  ul a {
+.menu-desktop ul a {
     text-decoration: none;
     color: rgb(253, 252, 252);
 }
 
-.menu-desktop  ul a:hover {
+.menu-desktop ul a:hover {
     cursor: pointer;
 }
 
-.menu-desktop  ul li {
+.menu-desktop ul li {
     display: flex;
     width: 25%;
     height: 100%;
@@ -96,12 +96,12 @@ header img {
     justify-content: center;
 }
 
-.menu-desktop  ul li:hover {
+.menu-desktop ul li:hover {
     background-color: #fec576;
     border-bottom: 1px #f6b458;
 }
 
-.menu-desktop  ul li:nth-child(1) {
+.menu-desktop ul li:nth-child(1) {
     background-color: #f5bd70;
     height: 100%;
     display: flex;
@@ -109,7 +109,7 @@ header img {
     align-items: center;
 }
 
-.menu-mobile  {
+.menu-mobile {
     position: relative;
     background-color: var(--fondo-logo);
     display: flex;
@@ -126,7 +126,7 @@ header img {
     justify-content: flex-start;
 }
 
-.menu-mobile .left-menu img{
+.menu-mobile .left-menu img {
     margin-left: 10px;
     width: 40px;
     height: 50px;
@@ -138,12 +138,13 @@ header img {
     display: flex;
     justify-content: flex-end;
 }
+
 .menu-mobile .right-menu img {
     width: 150px;
     height: 70px;
 }
 
-.menu-mobile  ul {
+.menu-mobile ul {
     width: 80%;
     height: 100%;
     display: flex;
@@ -519,19 +520,31 @@ footer .bye-message p {
     .container {
         height: auto;
     }
+
     .michi-card .like-michi {
         width: 50px;
         height: 50px;
     }
+
     .like-michi {
         font-size: 28px;
     }
+
     h4 {
         font-size: 10px !important;
     }
-    footer .social-networks ul,  footer .credits ul, footer .bye-message p{
+    .mensaje-guardado {
+        right: -50px;
+        height: auto;
+        width: 150px;
+    }
+
+    footer .social-networks ul,
+    footer .credits ul,
+    footer .bye-message p {
         font-size: 10px;
     }
+
     .menu-desktop {
         display: none;
     }
@@ -544,22 +557,30 @@ footer .bye-message p {
     }
 }
 
-@media (min-width: 561px) and (max-width: 760px){
+@media (min-width: 561px) and (max-width: 760px) {
     .container {
         height: auto;
     }
-    
+
     h4 {
         font-size: 10px !important;
     }
+
     .container-michis .michi-card {
         width: 180px;
         height: 180px;
     }
-    footer .social-networks ul,  footer .credits ul, footer .bye-message p{
+
+    footer .social-networks ul,
+    footer .credits ul,
+    footer .bye-message p {
         font-size: 10px;
     }
-
+    .mensaje-guardado {
+        right: -30px;
+        height: auto;
+        width: auto;
+    }
     .menu-mobile {
         display: none;
     }
@@ -576,15 +597,16 @@ footer .bye-message p {
     }
 }
 
-@media (min-width: 760px) and (max-width: 1080px){
+@media (min-width: 760px) and (max-width: 1080px) {
     .container {
         height: auto;
     }
-    
+
     .container-michis .michi-card {
         width: 220px;
         height: 220px;
     }
+
     .menu-mobile {
         display: none;
     }
@@ -601,18 +623,20 @@ footer .bye-message p {
     }
 }
 
-@media (min-width: 1081px){
+@media (min-width: 1081px) {
     .container {
         height: auto;
     }
-    
+
     .container-michis .michi-card {
         width: 300px;
         height: 300px;
     }
+
     .menu-mobile {
         display: none;
     }
+
     .aside-menu-mobile {
         display: none;
     }
@@ -625,18 +649,20 @@ footer .bye-message p {
     }
 }
 
-@media (min-width: 1500px){
+@media (min-width: 1500px) {
     .container {
         height: auto;
     }
-    
+
     .container-michis .michi-card {
         width: 300px;
         height: 300px;
     }
+
     .menu-mobile {
         display: none;
     }
+
     .aside-menu-mobile {
         display: none;
     }
