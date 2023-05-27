@@ -260,9 +260,6 @@ header img {
     bottom: 10px;
     border-radius: 50%;
     border: 0;
-}
-
-.like-michi {
     font-size: 20px;
     transition: transform 0.3s;
 }
