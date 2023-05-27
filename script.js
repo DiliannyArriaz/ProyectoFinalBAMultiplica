@@ -38,7 +38,7 @@ async function randomMichis(data) {
         articleGatito.classList.add('michi-card');
         imgGatito.src = gatito.url;
         btnAgregarMichi.classList.add('like-michi');
-        btnAgregarMichi.innerText = '❤️'
+        btnAgregarMichi.innerText = '🤍'
         btnAgregarMichi.addEventListener('click', () => {
             if (michisFavoritos.some(michi => michi.id === gatito.id)) {
                 mostrarMensajeGuardado('This michi is already saved on your list')
@@ -48,7 +48,7 @@ async function randomMichis(data) {
                 } else {
                     michisFavoritos.push(gatito);
                     localStorage.setItem('michisFavoritos', JSON.stringify(michisFavoritos));
-                    btnAgregarMichi.innerText = '💔'
+                    btnAgregarMichi.innerText = '❤️'
                     mostrarMensajeGuardado('Michi Saved');
                 }
             }
