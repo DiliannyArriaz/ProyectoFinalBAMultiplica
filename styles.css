@@ -214,6 +214,37 @@ header img {
     margin-bottom: 30px;
 }
 
+
+/* Contador de michis en Favoritos */
+
+.contador {
+    width: 50px;
+    height: 50px;
+    background-color: var(--fondo-logo);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    position: absolute;
+    right: 10px;
+}
+
+.contador p {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0px;
+    color: #ffe3e2;
+    font-weight: bold;
+}
+
+#contador {
+    font-weight: bold;
+}
+/* Cajita de michis */
 .container-michis {
     margin: 20px;
     padding: 14px;

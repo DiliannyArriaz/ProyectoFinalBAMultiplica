@@ -9,10 +9,12 @@ const deleteallmichis = document.querySelector('#deleteallMichis')
 const btnAnterior = document.querySelector('#anterior-btn');
 const btnSiguiente = document.querySelector('#siguiente-btn');
 const iconMenuMobile = document.querySelector('.left');
+const spanContador = document.getElementById('contador')
 
 const btnYes = document.getElementById('yes');
 const btnNo = document.getElementById('no');
-const popup = document.querySelector('.are-you-sure')
+const popup = document.querySelector('.are-you-sure');
+
 
 // Pidiendole datos a la API
 async function fetchData() {
@@ -33,6 +35,7 @@ let michisFavoritos = JSON.parse(localStorage.getItem('michisFavoritos')) || [];
 
 // Function para crear las tarjetitas de la API 
 async function randomMichis(data) {
+    verificarMichisEnFav()
     // Se limpia el DOM antes de ejectuar para que se actualice en lugar de crearlas debajo
     sectionContainerMichis.innerHTML = "";
     data.forEach(gatito => {
@@ -63,6 +66,7 @@ async function randomMichis(data) {
                     localStorage.setItem('michisFavoritos', JSON.stringify(michisFavoritos));
                     btnAgregarMichi.innerText = '❤️'
                     mostrarMensajeGuardado('Michi Saved');
+                    verificarMichisEnFav()
                 }
             }
         })
@@ -157,6 +161,7 @@ function loadAllPages() {
     // Si entra en Home va cargar fetchData y además evento de click para el botón de cargar más michis + Volver al top de la pagina, también la function para abrir y cerrar el menú de mobil
     if (sectionContainerMichis) {
         window.addEventListener('DOMContentLoaded', fetchData)
+        verificarMichisEnFav()
         buttonMoreMichis.addEventListener('click', () => {
             fetchData()
             topFunction()
@@ -206,6 +211,9 @@ function loadAllPages() {
     }
 }
 
+function verificarMichisEnFav (){
+    spanContador.innerText = Number(michisFavoritos.length)
+}
 // function para regresar al top de la pagina
 function topFunction() {
     document.body.scrollTop = 0;
