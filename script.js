@@ -10,6 +10,10 @@ const btnAnterior = document.querySelector('#anterior-btn');
 const btnSiguiente = document.querySelector('#siguiente-btn');
 const iconMenuMobile = document.querySelector('.left');
 
+const btnYes = document.getElementById('yes');
+const btnNo = document.getElementById('no');
+const popup = document.querySelector('.are-you-sure')
+
 // Pidiendole datos a la API
 async function fetchData() {
     const res = await fetch(APIRandomMichis, {
@@ -148,7 +152,6 @@ function mostrarMensajeGuardado(mensaje) {
     }, 3000);
 }
 
-
 // Function para validar si se está abriendo la pagina Home o Favorites.
 function loadAllPages() {
     // Si entra en Home va cargar fetchData y además evento de click para el botón de cargar más michis + Volver al top de la pagina, también la function para abrir y cerrar el menú de mobil
@@ -189,7 +192,17 @@ function loadAllPages() {
             })
         })
         // Evento de click para el botón de borrar a todos los michis del contenedor
-        deleteallmichis.addEventListener('click', deleteAllMichis)
+        deleteallmichis.addEventListener('click', ()=> {
+            console.log('click')
+            popup.classList.remove('hidden'); 
+            btnYes.addEventListener('click', ()=> {
+                deleteAllMichis()
+                popup.classList.add('hidden');
+            });
+            btnNo.addEventListener('click', ()=> {
+                popup.classList.add('hidden');
+            })
+        })
     }
 }
 

@@ -17,7 +17,7 @@ body {
     margin: 0;
     display: flex;
     flex-direction: column;
-
+    position: relative;
 }
 
 .hidden {
@@ -247,6 +247,55 @@ header img {
     text-decoration: none;
     cursor: pointer;
 }
+
+/* Pop up */
+
+.are-you-sure{
+    display: flex;
+    flex-direction: column;
+    background-color: #EBAD6E;
+    width: 360px;
+    height: 180px;
+    border-radius: 4px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+    z-index: 7;
+}
+
+.are-you-sure p {
+    height: 70%;
+    width: 100%;
+    color: rgb(253, 252, 252);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.botones {
+    background-color: #fdd399;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 30%;
+    gap: 80px
+}
+
+.botones button {
+    height: 25px;
+    width: 80px;
+    border: none;
+    border-radius: 4px;
+}
+
+.botones button:hover {
+    background-color: blanchedalmond;
+}
+
 
 .container-Favmichis .michi-card {
     width: 150px;
