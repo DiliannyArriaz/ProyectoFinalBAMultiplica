@@ -1,5 +1,6 @@
 const APIRandomMichis = 'https://api.thecatapi.com/v1/images/search?limit=8'
 const keyAPI = 'live_R2mXxGW5ZLkIxedUBJK3TIdVE9sWRW0zOO1IVzSCrUAw70KZttzPnuauIfR9sw5B'
+const randomImg = ' https://api.thecatapi.com/v1/images/search'
 
 const sectionContainerMichis = document.querySelector('.container-michis');
 const sectionContainerFavMichis = document.querySelector('.container-Favmichis');
@@ -15,9 +16,8 @@ const btnYes = document.getElementById('yes');
 const btnNo = document.getElementById('no');
 const popup = document.querySelector('.are-you-sure');
 
-
 // Pidiendole datos a la API
-async function fetchData() {
+async function fetchData(){
     const res = await fetch(APIRandomMichis, {
         headers: {
             method: "GET",
@@ -29,38 +29,47 @@ async function fetchData() {
     }
     const data = await res.json()
 
-    randomMichis(data)
+    if(data.filter(gatito => gatito.id !== 'ad5') || data.filter(gatito => gatito.id !== 'ad6') || data.filter(gatito => gatito.id !== 'ad4') || data.filter(gatito => gatito.id !== 'ad3') || data.filter(gatito => gatito.id !== 'ad2') || data.filter(gatito => gatito.id !== 'ad1') || data.filter(gatito => gatito.id !== 'ad7') || data.filter(gatito => gatito.id !== 'ad8') || data.filter(gatito => gatito.id !== 'ad9')){
+        randomMichis(data)
+    } else {
+        console.log(data)
+        fetchData()
+    }
+
+    
 }
 let michisFavoritos = JSON.parse(localStorage.getItem('michisFavoritos')) || [];
 
+
+async function getAnotherRandomCat (){
+    const res = await fetch(randomImg, {
+        method: 'GET',
+        'x-api-key': keyAPI
+    })
+    const data = await res.json();
+}
 // Function para crear las tarjetitas de la API 
 async function randomMichis(data) {
     verificarMichisEnFav()
-    // Se limpia el DOM antes de ejectuar para que se actualice en lugar de crearlas debajo
     sectionContainerMichis.innerHTML = "";
+
     data.forEach(gatito => {
-        // Creando el contenedor de las tarjetitas
         const articleGatito = document.createElement('article');
         articleGatito.classList.add('michi-card');
 
-        // La imagen de cada michi
         const imgGatito = document.createElement('img');
         imgGatito.src = gatito.url;
 
-        // Boton para likear los michis
         const btnAgregarMichi = document.createElement('button');
         btnAgregarMichi.classList.add('like-michi');
         btnAgregarMichi.innerText = '🤍'
-        // AddEventListener del boton de agregar michis, se comprueba primero si el michi ya está dentro del array de michis si no está guardado se comprueba si los michis guardados son más de 12, si lo son, no dejará al usuario guardar más michis.
         btnAgregarMichi.addEventListener('click', () => {
-            //  si lo está, salta un mensaje para avisarle al usuario que ya está guardado
+
             if (michisFavoritos.some(michi => michi.id === gatito.id)) {
                 mostrarMensajeGuardado('This michi is already saved on your list')
             } else {
-                // si no está guardado se comprueba si los michis guardados son más de 12, si lo son, no dejará al usuario guardar más michis. 
                 if (michisFavoritos.length >= 12) {
                     mostrarMensajeGuardado('You have so many michis!');
-                    // De lo contrario, dejará al usuario guardar el michi en favoritos
                 } else {
                     michisFavoritos.push(gatito);
                     localStorage.setItem('michisFavoritos', JSON.stringify(michisFavoritos));
@@ -197,21 +206,21 @@ function loadAllPages() {
             })
         })
         // Evento de click para el botón de borrar a todos los michis del contenedor
-        deleteallmichis.addEventListener('click', ()=> {
+        deleteallmichis.addEventListener('click', () => {
             console.log('click')
-            popup.classList.remove('hidden'); 
-            btnYes.addEventListener('click', ()=> {
+            popup.classList.remove('hidden');
+            btnYes.addEventListener('click', () => {
                 deleteAllMichis()
                 popup.classList.add('hidden');
             });
-            btnNo.addEventListener('click', ()=> {
+            btnNo.addEventListener('click', () => {
                 popup.classList.add('hidden');
             })
         })
     }
 }
 
-function verificarMichisEnFav (){
+function verificarMichisEnFav() {
     spanContador.innerText = Number(michisFavoritos.length)
 }
 // function para regresar al top de la pagina

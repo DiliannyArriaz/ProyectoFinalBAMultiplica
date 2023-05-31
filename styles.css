@@ -227,6 +227,8 @@ header img {
     border-radius: 50%;
     position: absolute;
     right: 10px;
+    z-index: 8;
+    box-shadow: 0 1px 4px 0 #373737;
 }
 
 .contador p {
@@ -589,6 +591,11 @@ footer p {
         height: 50px;
     }
 
+    .contador {
+        position: fixed;
+        bottom: 10px;
+    }
+
     .like-michi {
         font-size: 28px;
     }
@@ -634,6 +641,10 @@ footer p {
             transform: translate(50%, -50%);
             height: auto;
             width: auto;
+    }
+    .contador {
+        position: fixed;
+        bottom: 10px;
     }
     .menu-mobile {
         display: none;
