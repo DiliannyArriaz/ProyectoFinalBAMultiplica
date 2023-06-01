@@ -5,7 +5,6 @@
     --naranja-bordes: #f3b054;
 }
 
-
 h4 {
     font-size: 16px !important;
     width: 100%;
@@ -43,6 +42,7 @@ header img {
     width: 100%;
 }
 
+/* Menú para escritorio */
 .menu-desktop {
     position: relative;
     background-color: var(--fondo-logo);
@@ -110,7 +110,9 @@ header img {
     justify-content: center;
     align-items: center;
 }
+/* -- */
 
+/* Navbar para teléfonos/tablets */
 .menu-mobile {
     position: relative;
     background-color: var(--fondo-logo);
@@ -157,7 +159,9 @@ header img {
     text-align: center;
     align-items: center;
 }
+/* -- */
 
+/* Menú desplegable para teléfonos/tablets */
 .aside-menu-mobile {
     display: flex;
     align-items: center;
@@ -203,20 +207,9 @@ header img {
 .aside-menu-mobile ul li:hover {
     background-color: rgb(255, 181, 91);
 }
+/* -- */
 
-.container {
-    height: 600px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 30px;
-    margin-bottom: 30px;
-}
-
-
-/* Contador de michis en Favoritos */
-
+/* Contador de michis en favoritos */
 .contador {
     width: 50px;
     height: 50px;
@@ -246,7 +239,20 @@ header img {
 #contador {
     font-weight: bold;
 }
+/* -- */
+
+
 /* Cajita de michis */
+.container {
+    height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
 .container-michis {
     margin: 20px;
     padding: 14px;
@@ -318,7 +324,9 @@ header img {
         transform: scale(1);
     }
 }
+/* -- */
 
+/* Popup de mensajes */
 .mensaje-guardado {
     width: auto;
     text-align: center;
@@ -338,9 +346,129 @@ header img {
 .mensaje-guardado.mostrar {
     opacity: 1;
 }
+/* -- */
+
+/* Boton de generar más imagenes de michis */
+.more-michis-button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.more-michis-button button {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    outline: none;
+    border: 0;
+    vertical-align: middle;
+    text-decoration: none;
+    font-family: inherit;
+    font-size: 15px;
+}
+
+.more-michis-button button.learn-more {
+    font-weight: 600;
+    color: #ecb289;
+    text-transform: uppercase;
+    padding: 1.25em 2em;
+    background: #f6e7d6;
+    border: 2px solid var(--naranja-bordes);
+    border-radius: 0.75em;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transition: background 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+    transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), background 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
+}
+
+.more-michis-button button.learn-more::before {
+    position: absolute;
+    content: '';
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #fecaad;
+    border-radius: inherit;
+    -webkit-box-shadow: 0 0 0 2px var(--naranja-bordes), 0 0.625em 0 0 #ffe3e2;
+    box-shadow: 0 0 0 2px var(--naranja-bordes), 0 0.625em 0 0 #ffe3e2;
+    -webkit-transform: translate3d(0, 0.75em, -1em);
+    transform: translate3d(0, 0.75em, -1em);
+    transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), box-shadow 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
+}
+
+.more-michis-button button .learn-more:hover {
+    background: #f8d5b2;
+    -webkit-transform: translate(0, 0.25em);
+    transform: translate(0, 0.25em);
+}
+
+.more-michis-button button.learn-more:hover::before {
+    -webkit-box-shadow: 0 0 0 2px var(--naranja-bordes), 0 0.5em 0 0 #feecda;
+    box-shadow: 0 0 0 2px var(--naranja-bordes), 0 0.5em 0 0 #feecda;
+    -webkit-transform: translate3d(0, 0.5em, -1em);
+    transform: translate3d(0, 0.5em, -1em);
+}
+
+.more-michis-button button.learn-more:active {
+    background: #feecda;
+    -webkit-transform: translate(0em, 0.75em);
+    transform: translate(0em, 0.75em);
+}
+
+.more-michis-button button.learn-more:active::before {
+    -webkit-box-shadow: 0 0 0 2px var(--naranja-bordes), 0 0 #fff3e2;
+    box-shadow: 0 0 0 2px var(--naranja-bordes), 0 0 #fff3e2;
+    -webkit-transform: translate3d(0, 0, -1em);
+    transform: translate3d(0, 0, -1em);
+}
+/* -- */
+
+/* Loader para cuando no hay michis en el HTML */
+.loader-div {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.loader {
+    display: flex;
+    width: 100px;
+    height: 100px;
+    display: inline-block;
+    border: 5px solid rgb(255, 17, 0);
+    border-radius: 50%;
+    border-top-color: transparent;
+    border-bottom-color: transparent;
+    animation: rot5 1s infinite;
+}
+
+@keyframes rot5 {
+    0% {
+        transform: rotate(0);
+    }
+
+    50% {
+        transform: rotate(180deg);
+        border-top-color: rgb(139, 46, 46);
+        border-bottom-color: rgb(243, 92, 33);
+        border-right-color: transparent;
+        border-left-color: transparent;
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+/* -- */
 
 
-
+/* Footer de la página */
 footer {
     margin-top: 60px;
     display: flex;
@@ -465,120 +593,6 @@ footer p {
     bottom: 0;
     font-size: 12px;
     color: rgb(83, 83, 83);
-}
-.more-michis-button {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-
-.more-michis-button button {
-    position: relative;
-    display: inline-block;
-    cursor: pointer;
-    outline: none;
-    border: 0;
-    vertical-align: middle;
-    text-decoration: none;
-    font-family: inherit;
-    font-size: 15px;
-}
-
-.more-michis-button button.learn-more {
-    font-weight: 600;
-    color: #ecb289;
-    text-transform: uppercase;
-    padding: 1.25em 2em;
-    background: #f6e7d6;
-    border: 2px solid var(--naranja-bordes);
-    border-radius: 0.75em;
-    -webkit-transform-style: preserve-3d;
-    transform-style: preserve-3d;
-    -webkit-transition: background 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
-    transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), background 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1);
-}
-
-.more-michis-button button.learn-more::before {
-    position: absolute;
-    content: '';
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: #fecaad;
-    border-radius: inherit;
-    -webkit-box-shadow: 0 0 0 2px var(--naranja-bordes), 0 0.625em 0 0 #ffe3e2;
-    box-shadow: 0 0 0 2px var(--naranja-bordes), 0 0.625em 0 0 #ffe3e2;
-    -webkit-transform: translate3d(0, 0.75em, -1em);
-    transform: translate3d(0, 0.75em, -1em);
-    transition: transform 150ms cubic-bezier(0, 0, 0.58, 1), box-shadow 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-transform 150ms cubic-bezier(0, 0, 0.58, 1), -webkit-box-shadow 150ms cubic-bezier(0, 0, 0.58, 1);
-}
-
-.more-michis-button button .learn-more:hover {
-    background: #f8d5b2;
-    -webkit-transform: translate(0, 0.25em);
-    transform: translate(0, 0.25em);
-}
-
-.more-michis-button button.learn-more:hover::before {
-    -webkit-box-shadow: 0 0 0 2px var(--naranja-bordes), 0 0.5em 0 0 #feecda;
-    box-shadow: 0 0 0 2px var(--naranja-bordes), 0 0.5em 0 0 #feecda;
-    -webkit-transform: translate3d(0, 0.5em, -1em);
-    transform: translate3d(0, 0.5em, -1em);
-}
-
-.more-michis-button button.learn-more:active {
-    background: #feecda;
-    -webkit-transform: translate(0em, 0.75em);
-    transform: translate(0em, 0.75em);
-}
-
-.more-michis-button button.learn-more:active::before {
-    -webkit-box-shadow: 0 0 0 2px var(--naranja-bordes), 0 0 #fff3e2;
-    box-shadow: 0 0 0 2px var(--naranja-bordes), 0 0 #fff3e2;
-    -webkit-transform: translate3d(0, 0, -1em);
-    transform: translate3d(0, 0, -1em);
-}
-
-.loader-div {
-    width: 100%;
-    height: 300px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-.loader {
-    display: flex;
-    width: 100px;
-    height: 100px;
-    display: inline-block;
-    border: 5px solid rgb(255, 17, 0);
-    border-radius: 50%;
-    border-top-color: transparent;
-    border-bottom-color: transparent;
-    animation: rot5 1s infinite;
-}
-
-@keyframes rot5 {
-    0% {
-        transform: rotate(0);
-    }
-
-    50% {
-        transform: rotate(180deg);
-        border-top-color: rgb(139, 46, 46);
-        border-bottom-color: rgb(243, 92, 33);
-        border-right-color: transparent;
-        border-left-color: transparent;
-    }
-
-    100% {
-        transform: rotate(360deg);
-    }
 }
 
 @media (max-width: 560px) {

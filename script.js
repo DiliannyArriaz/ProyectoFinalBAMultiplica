@@ -1,6 +1,5 @@
 const APIRandomMichis = 'https://api.thecatapi.com/v1/images/search?limit=8'
 const keyAPI = 'live_R2mXxGW5ZLkIxedUBJK3TIdVE9sWRW0zOO1IVzSCrUAw70KZttzPnuauIfR9sw5B'
-const randomImg = ' https://api.thecatapi.com/v1/images/search'
 
 const sectionContainerMichis = document.querySelector('.container-michis');
 const sectionContainerFavMichis = document.querySelector('.container-Favmichis');
@@ -38,16 +37,9 @@ async function fetchData(){
 
     
 }
+
 let michisFavoritos = JSON.parse(localStorage.getItem('michisFavoritos')) || [];
 
-
-async function getAnotherRandomCat (){
-    const res = await fetch(randomImg, {
-        method: 'GET',
-        'x-api-key': keyAPI
-    })
-    const data = await res.json();
-}
 // Function para crear las tarjetitas de la API 
 async function randomMichis(data) {
     verificarMichisEnFav()
@@ -84,9 +76,7 @@ async function randomMichis(data) {
         articleGatito.appendChild(btnAgregarMichi);
 
         sectionContainerMichis.appendChild(articleGatito);
-
         sectionContainerMichis.classList.add('grid')
-
     })
 };
 
@@ -135,7 +125,6 @@ function favMichis() {
             } else {
                 mensajitoEmpty.classList.add('hidden')
             }
-
         })
         // Se agregan las tarjetitas al DOM
         articleGatito.appendChild(imgGatito);
@@ -229,6 +218,5 @@ function topFunction() {
     document.documentElement.scrollTop = 0;
 }
 
-// Lo primero que hará el script es ejecutar esto
-loadAllPages();
+loadAllPages()
 
