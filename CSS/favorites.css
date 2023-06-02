@@ -398,7 +398,7 @@ aside .preview-favMichi {
     height: 500px;
     padding: 0;
     border: 5px solid rgb(250, 191, 113);
-    position: absolute;
+    position: fixed;
     border-radius: 6px;
     overflow: hidden;
     top: 50%;
@@ -649,8 +649,55 @@ footer p {
     transform: translate3d(0, 0, -1em);
 }
 
+@media (max-width: 375px){
+    .container {
+        height: auto;
+    }
+    .container-Favmichis .michi-card {
+        width: 100px;
+        height: 100px;
+    }
 
-@media (max-width: 560px) {
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+        justify-items: center;
+    }
+
+    .like-michi {
+        font-size: 18px;
+    }
+
+    .mensajito p {
+        padding: 10px;
+        width: 350px;
+        height: 100px;
+        font-size: 12px;
+        text-align: justify;
+    }
+    .mensajito p a {
+        margin: 0;
+    }
+    .mensaje-guardado {
+        bottom: 10%;
+        right: 50%;
+        transform: translate(50%, -50%);
+        height: auto;
+    }
+
+    .menu-desktop {
+        display: none;
+    }
+
+    aside .preview-favMichi {
+        width: 250px;
+        height: 250px; 
+    }
+
+}
+
+@media (min-width: 376px) and (max-width: 560px) {
     .container {
         height: auto;
     }
@@ -659,8 +706,8 @@ footer p {
         height: 50px;
     }
     .container-Favmichis .michi-card {
-        width: 160px;
-        height: 160px;
+        width: 140px;
+        height: 140px;
     }
     .like-michi {
         font-size: 28px;
@@ -685,6 +732,11 @@ footer p {
 
     .menu-desktop {
         display: none;
+    }
+
+    aside .preview-favMichi {
+        width: 300px;
+        height: 300px; 
     }
 
     footer .social-networks ul,  footer .credits ul, footer .bye-message p{
