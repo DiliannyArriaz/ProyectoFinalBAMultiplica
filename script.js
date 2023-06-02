@@ -93,6 +93,9 @@ function favMichis() {
         // Imagen del gatito
         const imgGatito = document.createElement('img');
         imgGatito.src = gatito.url;
+        imgGatito.addEventListener('click', ()=> {
+            verFotoDeMichi(gatito)
+        })
 
         //  Boton de Borrar michi
         const btnSacarMichiDeFavoritos = document.createElement('button');
@@ -133,6 +136,43 @@ function favMichis() {
     });
 }
 
+function verFotoDeMichi (gatito) {
+    const asidePreview = document.querySelector('.preview');
+    asidePreview.classList.remove('hidden');
+    const darkenDiv = document.querySelector('.darken');
+    darkenDiv.classList.remove('hidden')
+
+    const buttonCerrarPreview = document.querySelector('.close-button');
+    buttonCerrarPreview.addEventListener('click', ()=> {
+        asidePreview.classList.add('hidden');
+        darkenDiv.classList.add('hidden');
+    })
+    const buttonSacarMichiDeFavoritoPreview = document.querySelector('.dislike');
+    buttonSacarMichiDeFavoritoPreview.id = `${gatito.id}`
+    
+    buttonSacarMichiDeFavoritoPreview.addEventListener('click', (e) => {
+            const buttonMichisFav = e.target;
+
+            const id = buttonMichisFav.id;
+            localStorage.removeItem(id);
+            // Se actualiza el array de michis y se elimina el michi clickeado
+            const michisFavoritos = JSON.parse(localStorage.getItem('michisFavoritos'));
+            const michisFavoritosActualizados = michisFavoritos.filter((gatito) => gatito.id !== id)
+            localStorage.setItem('michisFavoritos', JSON.stringify(michisFavoritosActualizados));
+
+            mostrarMensajeGuardado('Michi eliminado de favoritos')
+
+            asidePreview.classList.add('hidden');
+            darkenDiv.classList.add('hidden');
+
+            setTimeout(()=> {
+                location.reload()
+            }, 500)
+
+    })
+    const imagen = document.querySelector('.gatito-preview');
+    imagen.src = gatito.url
+}
 // Function para borrar todos los michis del LocalStorage
 function deleteAllMichis() {
     localStorage.removeItem('michisFavoritos');

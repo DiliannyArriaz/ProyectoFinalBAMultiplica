@@ -31,6 +31,15 @@ body {
     justify-items: center;
 }
 
+.darken {
+    width: 100%;
+    height: calc(100%);
+    position: fixed;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 10;
+}
+
 header {
     width: 100%;
     height: 200px;
@@ -201,6 +210,7 @@ header img {
 .aside-menu-mobile ul li:hover {
     background-color: rgb(255, 181, 91);
 }
+
 
 
 .container {
@@ -379,6 +389,66 @@ header img {
 .mensaje-guardado.mostrar {
     opacity: 1;
 }
+/* -- */
+
+/* Aside para ver mejor la imagen de los michis */
+
+aside .preview-favMichi {
+    width: 500px;
+    height: 500px;
+    padding: 0;
+    border: 5px solid rgb(250, 191, 113);
+    position: absolute;
+    border-radius: 6px;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 11;
+}
+
+.gatito-preview {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.preview-favMichi .boton-cerrar-preview {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.close-button {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+
+.dislike-michi {
+    width: 100%;
+    height: 10%;
+    z-index: 3;
+    position: absolute;
+    bottom: 0;
+}
+
+.dislike {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 0;
+    position: absolute;
+    right: 8px;
+    bottom: 8px;
+    font-size: 20px;
+    text-align: center;
+    background-color: rgba(240, 248, 255, 0.284);
+}
+/* -- */
 
 footer {
     margin-top: 60px;

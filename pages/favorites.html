@@ -46,16 +46,29 @@
             </ul>
         </div>
     </aside>
+
     <main>
-        
-    <div class="are-you-sure hidden">
-        <p>Are you sure you want to delete all the michis?</p>
-        <div class="botones">
-            <button id="yes">Yes</button>
-            <button id="no">No</button>
+        <div class="are-you-sure hidden">
+            <p>Are you sure you want to delete all the michis?</p>
+            <div class="botones">
+                <button id="yes">Yes</button>
+                <button id="no">No</button>
+            </div>
         </div>
-    </div>
-    
+
+        <aside class="preview hidden">
+            <div class="preview-favMichi">
+                <div class="boton-cerrar-preview">
+                    <img src="../img/icons8-x-100.png" alt="close-button" class="close-button">
+                </div>
+                <div class="dislike-michi">
+                    <button class="dislike">💔</button>
+                </div>
+                <img src="https://cdn2.thecatapi.com/images/cq3.jpg" alt="gatitofav" class="gatito-preview">
+                
+            </div>
+        </aside>
+
         <div class="container"> 
             <div class='mensajito'>
                 <p id="mensajito-emptyFavs">Please, add some michis to your favorite list first, go back to the <a href="../index.html"> home </a>page</p>
@@ -65,13 +78,15 @@
             
             </section>
             <div id="mensaje-guardado" class="mensaje-guardado"></div>
-
         </div>
 
         <div class="more-michis-button">
             <button class="learn-more" id="deleteallMichis">Delete All</button>
         </div>
+    
+
     </main>
+
     <footer>
         <div class="social-networks">
             <h4>Contact Me</h4>
@@ -106,6 +121,9 @@
         <p>©️ diliannyalbornoz@gmail.com</p>
     </footer>
 
+    <div class="darken hidden">
+
+    </div>
     <script src="../script.js"></script>
     
 </body>
