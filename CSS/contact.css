@@ -356,7 +356,7 @@ footer .social-networks ul {
     padding: 0;
     font-size: 16px;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     flex-wrap: wrap;
 }
 
@@ -462,6 +462,15 @@ footer p {
         right: 50%;
         transform: translate(50%, -50%);
         height: auto;
+    }
+    footer .social-networks ul li a img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .social-networks .gmail {
+        width: 28px;
+        height: 28px;
     }
 
     footer .social-networks ul,  footer .credits ul, footer .bye-message p{
