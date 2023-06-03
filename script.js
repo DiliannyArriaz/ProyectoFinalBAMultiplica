@@ -32,11 +32,8 @@ async function fetchData(){
     if(data.filter(gatito => gatito.id !== 'ad5') || data.filter(gatito => gatito.id !== 'ad6') || data.filter(gatito => gatito.id !== 'ad4') || data.filter(gatito => gatito.id !== 'ad3') || data.filter(gatito => gatito.id !== 'ad2') || data.filter(gatito => gatito.id !== 'ad1') || data.filter(gatito => gatito.id !== 'ad7') || data.filter(gatito => gatito.id !== 'ad8') || data.filter(gatito => gatito.id !== 'ad9')){
         randomMichis(data)
     } else {
-        console.log(data)
         fetchData()
-    }
-
-    
+    } 
 }
 
 let michisFavoritos = JSON.parse(localStorage.getItem('michisFavoritos')) || [];
