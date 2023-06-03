@@ -28,6 +28,7 @@ async function fetchData(){
     }
     const data = await res.json()
 
+    // Hay imagenes de la API que algunas navegadores bloquean y el script se traba dejando el espacio en blanco, así que aquí bloquee algunas de ellas.
     if(data.filter(gatito => gatito.id !== 'ad5') || data.filter(gatito => gatito.id !== 'ad6') || data.filter(gatito => gatito.id !== 'ad4') || data.filter(gatito => gatito.id !== 'ad3') || data.filter(gatito => gatito.id !== 'ad2') || data.filter(gatito => gatito.id !== 'ad1') || data.filter(gatito => gatito.id !== 'ad7') || data.filter(gatito => gatito.id !== 'ad8') || data.filter(gatito => gatito.id !== 'ad9')){
         randomMichis(data)
     } else {
@@ -82,7 +83,7 @@ async function randomMichis(data) {
 
 // Function para crear las tarjetitas de los michis en el container.
 function favMichis() {
-    // Se limpia el contenedor primero para que al momento de borrar o crear una nueva tarjeta se actualice el container
+    // Se limpia primero el contenedor para que al momento de crear o eliminar a un michi se actualice en la pagina
     sectionContainerFavMichis.innerHTML = "";
 
     michisFavoritos.forEach((gatito) => {
@@ -114,14 +115,14 @@ function favMichis() {
             const id = buttonMichisFav.id;
             localStorage.removeItem(id);
 
-            // Se actualiza el array de michis y se elimina el michi clickeado
+            // Se elimina el michi del array y se actualiza en el HTML
 
             const michisFavoritos = JSON.parse(localStorage.getItem('michisFavoritos'));
             const michisFavoritosActualizados = michisFavoritos.filter((gatito) => gatito.id !== id)
 
             localStorage.setItem('michisFavoritos', JSON.stringify(michisFavoritosActualizados));
 
-            // Se vuelve a activar el mensaje default del contenedor michis favoritos si el usuario elimina todos
+            // Si el usuario elimina a todos, se activa el mensaje default
             if (michisFavoritosActualizados == 0 || michisFavoritos == 0) {
                 mensajitoEmpty.classList.remove('hidden')
                 sectionContainerFavMichis.classList.add('hidden')
@@ -155,7 +156,7 @@ function verFotoDeMichi (gatito) {
 
             const id = buttonMichisFav.id;
             localStorage.removeItem(id);
-            // Se actualiza el array de michis y se elimina el michi clickeado
+            // Se elimina al michi del array de favoritos desde la tarjeta Preview
             const michisFavoritos = JSON.parse(localStorage.getItem('michisFavoritos'));
             const michisFavoritosActualizados = michisFavoritos.filter((gatito) => gatito.id !== id)
             localStorage.setItem('michisFavoritos', JSON.stringify(michisFavoritosActualizados));
@@ -165,6 +166,7 @@ function verFotoDeMichi (gatito) {
             asidePreview.classList.add('hidden');
             darkenDiv.classList.add('hidden');
 
+            // Se actualiza la pagina 
             setTimeout(()=> {
                 location.reload()
             }, 500)
@@ -184,7 +186,7 @@ function deleteAllMichis() {
     mostrarMensajeGuardado('All Michis has been remove from favorites');
 }
 
-// Function para los mensajes que saltan en pantalla al realizar alguna acción
+// Function para mostrar el POP UP en la pagina
 function mostrarMensajeGuardado(mensaje) {
     const mensajeGuardado = document.getElementById('mensaje-guardado');
     mensajeGuardado.innerText = mensaje;
@@ -196,7 +198,7 @@ function mostrarMensajeGuardado(mensaje) {
 
 // Function para validar si se está abriendo la pagina Home o Favorites.
 function loadAllPages() {
-    // Si entra en Home va cargar fetchData y además evento de click para el botón de cargar más michis + Volver al top de la pagina, también la function para abrir y cerrar el menú de mobil
+    // Si entra en Home va cargar fetchData - botón de cargar más michis + Volver al top de la pagina - function para abrir y cerrar el menú de mobil
     if (sectionContainerMichis) {
         window.addEventListener('DOMContentLoaded', fetchData)
         verificarMichisEnFav()
@@ -212,7 +214,7 @@ function loadAllPages() {
         })
     }
 
-    // Revisar si la section de Fav Michis existe para saber si el usuario está en la pagina Home o Favorites;
+    // Si entra a Favorites va a cargar FavMichis - evento de click para el menú mobil;
     else if (sectionContainerFavMichis) {
         window.addEventListener('DOMContentLoaded', () => {
             // Validando si hay michis en el array de favoritos, si no los hay se crea el mensaje predeterminado para avisar que no hay michis en favoritos
