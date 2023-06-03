@@ -16,7 +16,7 @@ const btnNo = document.getElementById('no');
 const popup = document.querySelector('.are-you-sure');
 
 // Pidiendole datos a la API
-async function fetchData(){
+async function fetchData() {
     const res = await fetch(APIRandomMichis, {
         headers: {
             method: "GET",
@@ -29,11 +29,11 @@ async function fetchData(){
     const data = await res.json()
 
     // Hay imagenes de la API que algunas navegadores bloquean y el script se traba dejando el espacio en blanco, así que aquí bloquee algunas de ellas.
-    if(data.filter(gatito => gatito.id !== 'ad5') || data.filter(gatito => gatito.id !== 'ad6') || data.filter(gatito => gatito.id !== 'ad4') || data.filter(gatito => gatito.id !== 'ad3') || data.filter(gatito => gatito.id !== 'ad2') || data.filter(gatito => gatito.id !== 'ad1') || data.filter(gatito => gatito.id !== 'ad7') || data.filter(gatito => gatito.id !== 'ad8') || data.filter(gatito => gatito.id !== 'ad9')){
+    if (data.filter(gatito => gatito.id !== 'ad5') || data.filter(gatito => gatito.id !== 'ad6') || data.filter(gatito => gatito.id !== 'ad4') || data.filter(gatito => gatito.id !== 'ad3') || data.filter(gatito => gatito.id !== 'ad2') || data.filter(gatito => gatito.id !== 'ad1') || data.filter(gatito => gatito.id !== 'ad7') || data.filter(gatito => gatito.id !== 'ad8') || data.filter(gatito => gatito.id !== 'ad9')) {
         randomMichis(data)
     } else {
         fetchData()
-    } 
+    }
 }
 
 let michisFavoritos = JSON.parse(localStorage.getItem('michisFavoritos')) || [];
@@ -91,7 +91,7 @@ function favMichis() {
         // Imagen del gatito
         const imgGatito = document.createElement('img');
         imgGatito.src = gatito.url;
-        imgGatito.addEventListener('click', ()=> {
+        imgGatito.addEventListener('click', () => {
             verFotoDeMichi(gatito)
         })
 
@@ -134,39 +134,39 @@ function favMichis() {
     });
 }
 
-function verFotoDeMichi (gatito) {
+function verFotoDeMichi(gatito) {
     const asidePreview = document.querySelector('.preview');
     asidePreview.classList.remove('hidden');
     const darkenDiv = document.querySelector('.darken');
     darkenDiv.classList.remove('hidden')
 
     const buttonCerrarPreview = document.querySelector('.close-button');
-    buttonCerrarPreview.addEventListener('click', ()=> {
+    buttonCerrarPreview.addEventListener('click', () => {
         asidePreview.classList.add('hidden');
         darkenDiv.classList.add('hidden');
     })
     const buttonSacarMichiDeFavoritoPreview = document.querySelector('.dislike');
     buttonSacarMichiDeFavoritoPreview.id = `${gatito.id}`
-    
+
     buttonSacarMichiDeFavoritoPreview.addEventListener('click', (e) => {
-            const buttonMichisFav = e.target;
+        const buttonMichisFav = e.target;
 
-            const id = buttonMichisFav.id;
-            localStorage.removeItem(id);
-            // Se elimina al michi del array de favoritos desde la tarjeta Preview
-            const michisFavoritos = JSON.parse(localStorage.getItem('michisFavoritos'));
-            const michisFavoritosActualizados = michisFavoritos.filter((gatito) => gatito.id !== id)
-            localStorage.setItem('michisFavoritos', JSON.stringify(michisFavoritosActualizados));
+        const id = buttonMichisFav.id;
+        localStorage.removeItem(id);
+        // Se elimina al michi del array de favoritos desde la tarjeta Preview
+        const michisFavoritos = JSON.parse(localStorage.getItem('michisFavoritos'));
+        const michisFavoritosActualizados = michisFavoritos.filter((gatito) => gatito.id !== id)
+        localStorage.setItem('michisFavoritos', JSON.stringify(michisFavoritosActualizados));
 
-            mostrarMensajeGuardado('Michi eliminado de favoritos')
+        mostrarMensajeGuardado('Michi eliminado de favoritos')
 
-            asidePreview.classList.add('hidden');
-            darkenDiv.classList.add('hidden');
+        asidePreview.classList.add('hidden');
+        darkenDiv.classList.add('hidden');
 
-            // Se actualiza la pagina 
-            setTimeout(()=> {
-                location.reload()
-            }, 500)
+        // Se actualiza la pagina 
+        setTimeout(() => {
+            location.reload()
+        }, 500)
 
     })
     const imagen = document.querySelector('.gatito-preview');

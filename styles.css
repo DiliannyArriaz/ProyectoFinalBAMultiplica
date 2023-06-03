@@ -110,6 +110,7 @@ header img {
     justify-content: center;
     align-items: center;
 }
+
 /* -- */
 
 /* Navbar para teléfonos/tablets */
@@ -159,6 +160,7 @@ header img {
     text-align: center;
     align-items: center;
 }
+
 /* -- */
 
 /* Menú desplegable para teléfonos/tablets */
@@ -207,6 +209,7 @@ header img {
 .aside-menu-mobile ul li:hover {
     background-color: rgb(255, 181, 91);
 }
+
 /* -- */
 
 /* Contador de michis en favoritos */
@@ -239,6 +242,7 @@ header img {
 #contador {
     font-weight: bold;
 }
+
 /* -- */
 
 
@@ -324,6 +328,7 @@ header img {
         transform: scale(1);
     }
 }
+
 /* -- */
 
 /* Popup de mensajes */
@@ -346,6 +351,7 @@ header img {
 .mensaje-guardado.mostrar {
     opacity: 1;
 }
+
 /* -- */
 
 /* Boton de generar más imagenes de michis */
@@ -424,6 +430,7 @@ header img {
     -webkit-transform: translate3d(0, 0, -1em);
     transform: translate3d(0, 0, -1em);
 }
+
 /* -- */
 
 /* Loader para cuando no hay michis en el HTML */
@@ -465,6 +472,7 @@ header img {
         transform: rotate(360deg);
     }
 }
+
 /* -- */
 
 
@@ -566,7 +574,7 @@ footer .bye-message {
     justify-content: center;
 }
 
-footer .bye-message ul  {
+footer .bye-message ul {
     display: flex;
     flex-direction: column;
     height: 80%;
@@ -575,6 +583,7 @@ footer .bye-message ul  {
     align-items: center;
     padding: 0;
 }
+
 footer .bye-message ul li {
     height: 25%;
 }
@@ -613,6 +622,7 @@ footer p {
     .like-michi {
         font-size: 28px;
     }
+
     footer .social-networks ul li a img {
         width: 30px;
         height: 30px;
@@ -622,13 +632,16 @@ footer p {
         width: 28px;
         height: 28px;
     }
+
     .mensaje-guardado {
         bottom: 10%;
         right: 50%;
         transform: translate(50%, -50%)
     }
 
-    footer .social-networks ul,  footer .credits ul, footer .bye-message p{
+    footer .social-networks ul,
+    footer .credits ul,
+    footer .bye-message p {
         font-size: 16px;
     }
 
@@ -655,19 +668,24 @@ footer p {
         height: 180px;
     }
 
-    footer .social-networks ul,  footer .credits ul, footer .bye-message p{
+    footer .social-networks ul,
+    footer .credits ul,
+    footer .bye-message p {
         font-size: 16px;
     }
+
     .mensaje-guardado {
-            right: 50%;
-            transform: translate(50%, -50%);
-            height: auto;
-            width: auto;
+        right: 50%;
+        transform: translate(50%, -50%);
+        height: auto;
+        width: auto;
     }
+
     .contador {
         position: fixed;
         bottom: 10px;
     }
+
     .menu-mobile {
         display: none;
     }
