@@ -503,6 +503,8 @@ footer .social-networks ul li {
 }
 
 footer .social-networks ul li a {
+    width: 100%;
+    height: 100%;
     text-decoration: none;
     color: rgb(253, 252, 252);
 }
