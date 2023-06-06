@@ -254,8 +254,8 @@ function verificarMichisEnFav() {
 }
 // function para regresar al top de la pagina
 function topFunction() {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 200;
+    document.documentElement.scrollTop = 200;
 }
 
 loadAllPages()
