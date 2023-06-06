@@ -90,6 +90,7 @@ function favMichis() {
 
         // Imagen del gatito
         const imgGatito = document.createElement('img');
+        imgGatito.classList.add('imagen-gatitoFav')
         imgGatito.src = gatito.url;
         imgGatito.addEventListener('click', () => {
             verFotoDeMichi(gatito)
