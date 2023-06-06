@@ -524,6 +524,15 @@ footer p {
     .menu-mobile {
         display: none;
     }
+    footer .social-networks ul li a img {
+        width: 30px;
+        height: 30px;
+    }
+
+    .social-networks .gmail {
+        width: 28px;
+        height: 28px;
+    }
 
     .grid {
         display: grid;
