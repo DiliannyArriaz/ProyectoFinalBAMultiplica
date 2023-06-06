@@ -284,7 +284,6 @@ footer .social-networks ul li a:hover {
     height: 42px;
 }
 
-
 footer .credits {
     width: 33.33%;
     height: 100%;
@@ -441,14 +440,16 @@ footer p {
         font-size: 16px;
     }
 
+
+ 
     footer .social-networks ul li a img {
-        width: 30px;
-        height: 30px;
+        width: 48px;
+        height: 48px;
     }
 
     .social-networks .gmail {
-        width: 28px;
-        height: 28px;
+        width: 42px;
+        height: 42px;
     }
     .mensaje-guardado {
         bottom: 10%;
