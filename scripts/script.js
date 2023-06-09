@@ -49,12 +49,15 @@ async function randomMichis(data) {
 
         const imgGatito = document.createElement('img');
         imgGatito.src = gatito.url;
+        imgGatito.addEventListener('click', () => {
+            verfotitoMichiHome(gatito)
+        })
 
         const btnAgregarMichi = document.createElement('button');
         btnAgregarMichi.classList.add('like-michi');
+        btnAgregarMichi.id = `${gatito.id}`
         btnAgregarMichi.innerText = '🤍'
         btnAgregarMichi.addEventListener('click', () => {
-
             if (michisFavoritos.some(michi => michi.id === gatito.id)) {
                 mostrarMensajeGuardado('This michi is already saved on your list')
             } else {
@@ -78,6 +81,41 @@ async function randomMichis(data) {
     })
 };
 
+function verfotitoMichiHome(gatito) {
+    const asidePreviewHome = document.querySelector('.preview-home');
+    asidePreviewHome.classList.remove('hidden')
+    const darkenDiv = document.querySelector('.darken');
+    darkenDiv.classList.remove('hidden')
+
+    const buttonCloseMichiPreview = document.querySelector('.close-button-home');
+    buttonCloseMichiPreview.addEventListener('click', ()=> {
+        asidePreviewHome.classList.add('hidden');
+        darkenDiv.classList.add('hidden');
+    })
+    const imagPreviewMichi = document.querySelector('.gatito-preview-home');
+    imagPreviewMichi.src = gatito.url
+
+    const buttonAgregarAFavoritosPreview = document.querySelector('.like-preview');
+    buttonAgregarAFavoritosPreview.innerText = '🤍'
+    buttonAgregarAFavoritosPreview.addEventListener('click', ()=> {
+
+        if (michisFavoritos.some(michi => michi.id === gatito.id)) {
+            mostrarMensajeGuardado('This michi is already saved on your list')
+        } else {
+            if (michisFavoritos.length >= 12) {
+                mostrarMensajeGuardado('You have so many michis!');
+            } else {
+                michisFavoritos.push(gatito);
+                localStorage.setItem('michisFavoritos', JSON.stringify(michisFavoritos));
+                buttonAgregarAFavoritosPreview.innerText = '❤️'
+                const buttonMichiHome = document.getElementById(`${gatito.id}`)
+                buttonMichiHome.innerText = '❤️'
+                mostrarMensajeGuardado('Michi Saved');
+                verificarMichisEnFav()
+            }
+        }
+    })
+}
 // Function para crear las tarjetitas de los michis en el container.
 function favMichis() {
     // Se limpia primero el contenedor para que al momento de crear o eliminar a un michi se actualice en la pagina
@@ -93,7 +131,7 @@ function favMichis() {
         imgGatito.classList.add('imagen-gatitoFav')
         imgGatito.src = gatito.url;
         imgGatito.addEventListener('click', () => {
-            verFotoDeMichi(gatito)
+            verFotoDeMichiFav(gatito)
         })
 
         //  Boton de Borrar michi
@@ -135,7 +173,7 @@ function favMichis() {
     });
 }
 
-function verFotoDeMichi(gatito) {
+function verFotoDeMichiFav(gatito) {
     const asidePreview = document.querySelector('.preview');
     asidePreview.classList.remove('hidden');
     const darkenDiv = document.querySelector('.darken');
@@ -159,7 +197,7 @@ function verFotoDeMichi(gatito) {
         const michisFavoritosActualizados = michisFavoritos.filter((gatito) => gatito.id !== id)
         localStorage.setItem('michisFavoritos', JSON.stringify(michisFavoritosActualizados));
 
-        mostrarMensajeGuardado('Michi eliminado de favoritos')
+        mostrarMensajeGuardado('Michi Deleted from favorites')
 
         asidePreview.classList.add('hidden');
         darkenDiv.classList.add('hidden');
@@ -236,7 +274,6 @@ function loadAllPages() {
         })
         // Evento de click para el botón de borrar a todos los michis del contenedor
         deleteallmichis.addEventListener('click', () => {
-            console.log('click')
             popup.classList.remove('hidden');
             btnYes.addEventListener('click', () => {
                 deleteAllMichis()

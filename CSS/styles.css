@@ -23,6 +23,14 @@ body {
     display: none !important;
 }
 
+.darken {
+    width: 100%;
+    height: calc(100%);
+    position: fixed;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 10;
+}
 .grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -250,6 +258,65 @@ header img {
 /* -- */
 
 
+/* Preview Michi */
+
+aside .preview-michi {
+    width: 500px;
+    height: 500px;
+    padding: 0;
+    border: 5px solid rgb(250, 191, 113);
+    position: fixed;
+    border-radius: 6px;
+    overflow: hidden;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 11;
+}
+
+.gatito-preview-home {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.preview-michi .boton-cerrar-preview {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.close-button-home {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+
+.like-michi-preview {
+    width: 100%;
+    height: 10%;
+    z-index: 3;
+    position: absolute;
+    bottom: 0;
+}
+
+.like-preview {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 0;
+    position: absolute;
+    right: 8px;
+    bottom: 8px;
+    font-size: 20px;
+    text-align: center;
+    background-color: rgba(240, 248, 255, 0.284);
+}
+/* -- */
+
 /* Cajita de michis */
 .container {
     height: 600px;
@@ -291,6 +358,7 @@ header img {
     height: 100%;
     object-fit: cover;
     z-index: 2;
+    cursor: pointer;
 }
 
 .michi-card .like-michi {
@@ -627,6 +695,10 @@ footer p {
 
     .like-michi {
         font-size: 28px;
+    }
+    aside .preview-michi {
+        width: 350px;
+        height: 350px;
     }
 
     footer .social-networks ul li a img {

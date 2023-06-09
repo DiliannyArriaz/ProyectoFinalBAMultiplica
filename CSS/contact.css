@@ -312,9 +312,10 @@ textarea {
     height: auto;
     text-align: center;
     position: fixed;
-    bottom: 26%;
-    right: 10px;
-    transform: translateX(-50%);
+    bottom: 10%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    ;
     background-color: #d38740;
     color: #ffffff;
     padding: 10px 20px;
@@ -324,11 +325,9 @@ textarea {
     z-index: 10;
 }
 
-.mensaje-guardado.mostrar {
+.mensaje-guardado .mostrar {
     opacity: 1;
 }
-
-
 
 footer {
     margin-top: 60px;
