@@ -459,9 +459,38 @@ aside .preview-favMichi {
     font-size: 20px;
     text-align: center;
     background-color: rgba(240, 248, 255, 0.284);
+    font-size: 20px;
+    transition: transform 0.3s;
 }
 
+.dislike:hover {
+    transform: scale(1.2);
+}
+
+.dislike:active {
+    animation: change-text 0.5s forwards;
+}
+
+@keyframes change-text {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.5);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+
 /* -- */
+
+
+
+
 
 footer {
     margin-top: 60px;
