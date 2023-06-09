@@ -12,7 +12,6 @@ Tecnologías utilizadas
 - HTML
 - CSS
 - JavaScript
-- Bootstrap
 
 ## Uso
 
