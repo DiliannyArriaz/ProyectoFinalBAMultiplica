@@ -64,6 +64,7 @@ async function randomMichis(data) {
                 if (michisFavoritos.length >= 12) {
                     mostrarMensajeGuardado('You have so many michis!');
                 } else {
+
                     michisFavoritos.push(gatito);
                     localStorage.setItem('michisFavoritos', JSON.stringify(michisFavoritos));
                     btnAgregarMichi.innerText = '❤️'
@@ -96,7 +97,11 @@ function verfotitoMichiHome(gatito) {
     imagPreviewMichi.src = gatito.url
 
     const buttonAgregarAFavoritosPreview = document.querySelector('.like-preview');
-    buttonAgregarAFavoritosPreview.innerText = '🤍'
+    if (michisFavoritos.some(michi=> michi.id === gatito.id)){
+        buttonAgregarAFavoritosPreview.innerText = '❤️'
+    } else {
+        buttonAgregarAFavoritosPreview.innerText = '🤍'
+    }
     buttonAgregarAFavoritosPreview.addEventListener('click', ()=> {
 
         if (michisFavoritos.some(michi => michi.id === gatito.id)) {
