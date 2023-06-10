@@ -179,6 +179,7 @@ function verFotoDeMichiFav(gatito) {
     const darkenDiv = document.querySelector('.darken');
     darkenDiv.classList.remove('hidden')
 
+
     const buttonCerrarPreview = document.querySelector('.close-button');
     buttonCerrarPreview.addEventListener('click', () => {
         asidePreview.classList.add('hidden');
@@ -230,6 +231,7 @@ function mostrarMensajeGuardado(mensaje) {
     setTimeout(() => {
         mensajeGuardado.classList.remove('mostrar');
     }, 3000);
+    
 }
 
 // Function para validar si se está abriendo la pagina Home o Favorites.
