@@ -312,7 +312,7 @@ textarea {
     height: auto;
     text-align: center;
     position: fixed;
-    bottom: 10%;
+    bottom: 20%;
     right: 50%;
     transform: translate(50%, -50%);
     ;
