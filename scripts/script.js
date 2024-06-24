@@ -108,7 +108,7 @@ function verfotitoMichiHome(gatito) {
             mostrarMensajeGuardado('This michi is already saved on your list')
         } else {
             if (michisFavoritos.length >= 12) {
-                mostrarMensajeGuardado('You have so many michis!');
+                mostrarMensajeGuardado("You can't save more michis! 12/12");
             } else {
                 michisFavoritos.push(gatito);
                 localStorage.setItem('michisFavoritos', JSON.stringify(michisFavoritos));
